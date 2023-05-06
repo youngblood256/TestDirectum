@@ -35,4 +35,4 @@ for r in range(num_files):
     doc = docx.Document()
     text = generate_text(words, min_words, max_words)
     doc.add_paragraph(text)
-    doc.save('C:/Users/maxdy/Desktop/result/' + 'file{}.docx'.format(r))
+    doc.save(path + 'file{}.docx'.format(r))
