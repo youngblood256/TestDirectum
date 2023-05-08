@@ -1,10 +1,11 @@
 import random
 import docx
 
-path = 'output/'
-num_files = 10
-min_words = 100
-max_words = 200
+# Пример пути: 'C:/Users/maxdy/Desktop/result/'
+path = input('Введите путь к папке для генерируемых файлов:')
+num_files = int(input('Введите количество генерируемых файлов:'))
+min_words = int(input('Введите количество минимальное количество слов в файле:'))
+max_words = int(input('Введите количество максимальное количество слов в файле:'))
 
 # Файл words1.txt содержит список слов, каждое слово записано в новой строке.
 with open('words1.txt', 'r', encoding='utf-8') as f:
@@ -29,8 +30,7 @@ def generate_text(words, min_words, max_words):
 
 
 # В этом цикле мы создаем новый документ, генерируем случайный текст с помощью нашей функции и добавляем его в документ,
-# сохраняя его в файл .docx в указанной папке. В path (строка 4) пользователь указывает путь к папке, в которой будут
-# сохраняться созданные файлы. Пример пути: 'C:/Users/maxdy/Desktop/result/'
+# сохраняя его в файл .docx в указанной папке.
 for r in range(num_files):
     doc = docx.Document()
     text = generate_text(words, min_words, max_words)
